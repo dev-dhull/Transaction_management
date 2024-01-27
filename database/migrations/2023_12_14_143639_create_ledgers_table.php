@@ -21,6 +21,9 @@ return new class extends Migration
             $table->integer('labour')->nullable();
             $table->integer('bardana')->nullable();
             $table->boolean('is_paid')->default(false);
+            $table->float('interest_amount')->default(0)->nullable();
+            $table->boolean('due_date')->default(false)->comment('after 15 days, 1=>3days, 0=>15days');
+
             $table->timestamps();
         });
     }
